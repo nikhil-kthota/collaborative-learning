@@ -1,0 +1,40 @@
+/* TempFeatures.css - Temporary styles for scroll testing */
+.features-section {
+    padding: 6rem 2rem;
+    background-color: var(--bg-primary);
+    /* Will adapt to theme */
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.feature-box {
+    padding: 3rem;
+    background: var(--bg-card);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(132, 204, 22, 0.1);
+}
+
+.feature-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-lime-green);
+    font-family: var(--font-display);
+}
+
+.feature-box p {
+    color: inherit;
+    font-family: var(--font-body);
+    opacity: 0.8;
+}

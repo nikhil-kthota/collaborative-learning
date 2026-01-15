@@ -1,0 +1,120 @@
+/* Footer.css */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background-color: var(--bg-primary);
+    /* Automatically white in Light, black in Dark */
+    color: var(--text-primary);
+    border-top: 1px solid rgba(132, 204, 22, 0.2);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    position: relative;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme='dark'] .footer {
+    border-top-color: rgba(251, 191, 36, 0.2);
+}
+
+/* Sections */
+.footer-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-center {
+    flex: 1;
+    /* Takes up equal space to help centering */
+    display: flex;
+    justify-content: center;
+}
+
+.footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-copyright {
+    opacity: 0.8;
+}
+
+.footer-group {
+    font-weight: 700;
+    color: var(--color-lime-green);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+[data-theme='dark'] .footer-group {
+    color: var(--color-gold);
+}
+
+.github-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.github-link:hover {
+    color: var(--color-lime-green);
+}
+
+[data-theme='dark'] .github-link:hover {
+    color: var(--color-gold);
+}
+
+.scroll-top-btn {
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    background: rgba(132, 204, 22, 0.1);
+    color: var(--color-lime-green);
+    border-color: var(--color-lime-green);
+}
+
+[data-theme='dark'] .scroll-top-btn:hover {
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        justify-content: center;
+        flex: auto;
+    }
+}

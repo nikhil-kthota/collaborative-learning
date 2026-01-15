@@ -1,0 +1,155 @@
+/* Home.css */
+
+.home-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: #051008;
+    color: var(--color-light-green);
+    padding: 0 2rem;
+}
+
+/* 
+   We remove the javascript mouse tracking for the blob
+   and instead use a pure CSS animation to make it 'breathe' 
+   and morph while staying centered.
+*/
+.centered-blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Keeps it perfectly centered */
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    /* Gradient with your palette */
+    background: radial-gradient(circle, rgba(132, 204, 22, 0.15) 0%, rgba(26, 77, 46, 0.05) 50%, transparent 70%);
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+    animation: liquidMorph 10s ease-in-out infinite;
+}
+
+@keyframes liquidMorph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: translate(-50%, -50%) scale(1.1);
+        /* Slight breathe effect */
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.home-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    width: 100%;
+    /* Ensure it doesn't overflow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.headline {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 3.5rem;
+    /* Desktop size */
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    color: var(--color-lime-green);
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+.headline span {
+    display: block;
+}
+
+.headline-italic {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-lime-green);
+}
+
+.sub-headline {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    max-width: 600px;
+    color: var(--color-gold);
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.btn-journey {
+    margin-top: 3rem;
+    background: transparent;
+    color: var(--color-lime-green);
+    border: 1px solid rgba(132, 204, 22, 0.3);
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-journey:hover {
+    background: rgba(251, 191, 36, 0.05);
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.1);
+    letter-spacing: 0.3em;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 0 1.5rem;
+    }
+
+    .centered-blob {
+        width: 350px;
+        height: 350px;
+        /* Smaller blob for mobile */
+        filter: blur(40px);
+    }
+
+    .headline {
+        font-size: 2.2rem;
+        /* reduced from 3.5rem */
+    }
+
+    .sub-headline {
+        font-size: 1rem;
+        /* slightly smaller */
+        max-width: 100%;
+    }
+
+    .btn-journey {
+        margin-top: 2rem;
+        padding: 0.9rem 2rem;
+        font-size: 0.75rem;
+    }
+}

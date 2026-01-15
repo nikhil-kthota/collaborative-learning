@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  /* Core Basics */
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Palette */
+  --color-forest-green: #1a4d2e;
+  /* Deep Forest Green */
+  --color-light-green: #dcfce7;
+  /* Very pale green/white-ish */
+  --color-lime-green: #84cc16;
+  /* Vibrant Lime */
+  --color-gold: #fbbf24;
+  /* Warm Gold */
+
+  /* Defaults (Light Mode) */
+  --bg-primary: var(--color-white);
+  --bg-card: var(--color-light-green);
+  --bg-card-alt: var(--color-forest-green);
+
+  --text-primary: var(--color-black);
+  --text-on-dark: var(--color-gold);
+  --text-on-light: var(--color-black);
+
+  --btn-primary-bg: var(--color-lime-green);
+  --btn-primary-text: var(--color-black);
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+
+  /* Typography */
+  --font-display: 'Quicksand', sans-serif;
+  --font-body: 'Comfortaa', sans-serif;
+}
+
+[data-theme='dark'] {
+  --bg-primary: var(--color-black);
+  --bg-card: var(--color-forest-green);
+
+  --text-primary: var(--color-gold);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  /* Comfortaa for body text */
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  line-height: 1.6;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-brand,
+.btn,
+.display-text {
+  font-family: var(--font-display);
+  /* Quicksand for headings and UI elements */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Specific Font Weights if needed */
+p {
+  font-weight: 400;
+  /* Comfortaa tends to be rounded, ensure readability */
+}
+
+/* Utility Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-family: var(--font-display);
+  color: var(--color-lime-green);
+  margin-bottom: 4rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme='dark'] .section-title {
+  color: var(--color-gold) !important;
+}
