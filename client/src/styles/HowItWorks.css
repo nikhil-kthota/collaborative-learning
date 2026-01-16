@@ -1,166 +1,133 @@
 /* HowItWorks.css */
 
 .how-it-works-section {
+    background-color: #8ce655;
+    /* Lime Green as requested */
+    color: #000000;
     padding: 6rem 2rem;
-    background-color: var(--bg-primary);
-    /* Adapts to theme */
-    position: relative;
-    overflow: hidden;
-}
-
-
-.timeline-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    padding: 2rem 0;
-}
-
-/* The central vertical line */
-.timeline-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    bottom: 0;
-    /* Full height */
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--color-lime-green), transparent);
-    z-index: 0;
-}
-
-.timeline-step {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4rem;
-    position: relative;
-    opacity: 0;
-    /* Initial state for animation */
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
-}
-
-.timeline-step.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.step-content-box {
-    width: 45%;
-    padding: 2rem;
-    background: var(--bg-card);
-    border: 1px solid rgba(132, 204, 22, 0.2);
-    border-radius: 1rem;
+    border-top-left-radius: 80px;
+    /* Round corners */
+    border-top-right-radius: 80px;
     position: relative;
     z-index: 10;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    margin-top: -40px;
+    /* Slight overlap for smooth look if desired, or 0 */
 }
 
-.step-content-box:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-gold);
-    box-shadow: 0 8px 30px rgba(251, 191, 36, 0.1);
+.hiw-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    position: relative;
 }
 
-/* Placement classes */
-.step-left {
-    justify-content: flex-start;
+/* Left Side - Sticky Header */
+.hiw-left {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    padding-right: 2rem;
 }
 
-.step-right {
-    justify-content: flex-end;
-}
-
-.step-left .step-content-box {
-    margin-right: auto;
-}
-
-.step-right .step-content-box {
-    margin-left: auto;
-}
-
-/* The circular number indicator on the timeline */
-.step-number {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--color-lime-green);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-lime-green);
-    font-family: var(--font-display);
+.hiw-main-title {
+    font-size: 5rem;
+    line-height: 1;
     font-weight: 700;
-    font-size: 1.2rem;
-    z-index: 20;
-    box-shadow: 0 0 15px rgba(132, 204, 22, 0.2);
-}
-
-.step-title {
     font-family: var(--font-display);
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
+    letter-spacing: -2px;
+    margin-bottom: 2rem;
+    color: #000000;
 }
 
-.step-desc {
+/* Right Side - Scrolling Steps */
+.hiw-right {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20vh;
+    /* Extra space to allow last item to be centered */
+}
+
+.hiw-step-item {
+    padding: 3rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    opacity: 0.4;
+    /* Inactive state default */
+}
+
+.hiw-step-item.active {
+    opacity: 1;
+}
+
+.hiw-step-header {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+}
+
+.hiw-step-desc {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, margin-top 0.5s ease;
+    opacity: 0.5;
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     line-height: 1.6;
-    opacity: 0.9;
-    transition: color 0.3s ease;
+    margin-top: 0;
 }
 
-/* Light Mode Colors */
-[data-theme='light'] .step-title {
-    color: var(--color-lime-green);
-    /* Changed from Forest Green to Lime Green to match Features */
+.hiw-step-desc-inner {
+    overflow: hidden;
+    color: #333;
+    /* Slightly softer black for readability */
 }
 
-[data-theme='light'] .step-desc {
-    color: var(--color-black);
-}
-
-[data-theme='light'] .step-content-box:hover {
-    border-color: var(--color-forest-green);
-    box-shadow: 0 8px 30px rgba(26, 77, 46, 0.2);
-}
-
-/* Dark Mode Colors */
-[data-theme='dark'] .step-title {
-    color: var(--color-gold);
-    /* Yellow/Gold */
-}
-
-[data-theme='dark'] .step-desc {
-    color: var(--color-light-green);
-    /* Text to Green */
+.hiw-step-item.active .hiw-step-desc {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 1rem;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .timeline-line {
-        left: 20px;
+@media (max-width: 900px) {
+    .how-it-works-section {
+        border-radius: 40px 40px 0 0;
+        padding: 4rem 1.5rem;
     }
 
-    .timeline-step {
-        justify-content: flex-start;
-        padding-left: 60px;
+    .hiw-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .step-left .step-content-box,
-    .step-right .step-content-box {
-        width: 100%;
-        margin: 0;
+    .hiw-left {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
     }
 
-    .step-number {
-        left: 20px;
+    .hiw-main-title {
+        font-size: 3.5rem;
+    }
+
+    .hiw-step-item {
+        padding: 2rem 0;
+        opacity: 1;
+        /* Always visible on mobile for simplicity */
+    }
+
+    .hiw-step-desc {
+        height: auto;
+        opacity: 1;
+        margin-top: 1rem;
+    }
+
+    .hiw-learn-more {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
