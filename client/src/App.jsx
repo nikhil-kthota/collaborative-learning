@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import HowItWorks from './components/HowItWorks'
-import Features from './components/Features'
-import Footer from './components/Footer'
+import { useState, useEffect } from 'react'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // Using HashRouter for seamless GitHub Pages deployment
+import LandingPage from './pages/LandingPage'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
 import './App.css'
 
 function App() {
-  const [isDark, setIsDark] = useState(true); // Default to Dark to match the new Home aesthetic
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
@@ -17,13 +15,15 @@ function App() {
   const toggleTheme = () => setIsDark(!isDark);
 
   return (
-    <div className="app-wrapper">
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
-      <Home />
-      <HowItWorks />
-      <Features />
-      <Footer />
-    </div>
+    <Router>
+      <div className="app-wrapper">
+        <Routes>
+          <Route path="/" element={<LandingPage isDark={isDark} toggleTheme={toggleTheme} />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

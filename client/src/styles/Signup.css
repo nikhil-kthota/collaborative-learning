@@ -1,0 +1,279 @@
+/* Signup.css */
+
+.signup-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--bg-primary);
+    overflow: hidden;
+}
+
+/* Left Side - Form */
+.signup-left {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    z-index: 2;
+    background-color: #8ce655;
+    /* Approximate match from user image */
+    color: #000000;
+}
+
+.signup-header {
+    margin-bottom: 1rem;
+}
+
+.signup-title {
+    font-size: 2.5rem;
+    color: #000000;
+    /* Black text */
+    margin-bottom: 0.5rem;
+}
+
+.signup-subtitle {
+    font-family: var(--font-body);
+    color: #000000;
+    opacity: 0.8;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+/* Theme-aware Form Inputs */
+.form-input {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    /* Default border */
+    font-family: var(--font-body);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+/* Light Mode Inputs: White background */
+[data-theme='light'] .form-input {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Inputs: Black background */
+[data-theme='dark'] .form-input {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-input::placeholder {
+    opacity: 0.6;
+    color: inherit;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-lime-green);
+    /* Use the brand green for focus */
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-auth-submit {
+    margin-top: 1rem;
+    background-color: #000000;
+    color: #8ce655;
+    /* Green text on black button for contrast */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+[data-theme='dark'] .btn-auth-submit {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-auth-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centering */
+    text-align: center;
+    margin: 1rem 0;
+    color: #000000;
+    opacity: 0.7;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 800;
+    position: relative;
+    width: 100%;
+}
+
+.auth-footer-text {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #000000 !important;
+    /* Force black */
+    opacity: 0.9;
+}
+
+.auth-link-highlight {
+    color: #ffffff !important;
+    /* Force white */
+    font-weight: 800;
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+.auth-forgot-pass {
+    font-size: 0.8rem;
+    color: #000000 !important;
+    /* Force black */
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.btn-google {
+    background: #ffffff;
+    /* Normal Google White */
+    border: 1px solid #ddd;
+    color: #444;
+    /* Standard Google Text Gray */
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    /* Google uses Roboto mostly */
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-google:hover {
+    background: #f8f9fa;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Right Side - Image */
+.signup-right {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-forest-green);
+    display: flex;
+    align-items: flex-end;
+    /* Align content to bottom */
+    justify-content: center;
+    padding: 1rem;
+    /* Significantly reduced to push content down */
+}
+
+.signup-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-forest-green);
+    /* Overlay color */
+    background-blend-mode: multiply;
+    /* Blends the green with the image */
+    opacity: 0.9;
+    filter: brightness(0.8) contrast(1.2);
+    /* Enhance contrast for art style */
+}
+
+.signup-overlay-text {
+    position: relative;
+    z-index: 10;
+    max-width: 98%;
+    /* Almost full width */
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 0.5rem;
+    /* Minimal bottom spacing */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(251, 191, 36, 0.1);
+    /* Subtle gold border */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.signup-overlay-text:hover {
+    transform: translateY(-5px);
+}
+
+.overlay-heading {
+    font-size: 2.8rem;
+    color: var(--color-gold);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-sub {
+    font-size: 1.3rem;
+    color: var(--color-light-green);
+    line-height: 1.6;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.overlay-sub span {
+    color: var(--color-lime-green);
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(132, 204, 22, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .signup-container {
+        flex-direction: column;
+    }
+
+    .signup-right {
+        display: none;
+    }
+
+    .signup-left {
+        max-width: 100%;
+        padding: 2rem;
+    }
+}
