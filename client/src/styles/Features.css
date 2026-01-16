@@ -1,10 +1,8 @@
-/* TempFeatures.css - Temporary styles for scroll testing */
+/* Features.css */
 .features-section {
     padding: 6rem 2rem;
     background-color: var(--bg-primary);
-    /* Will adapt to theme */
     color: var(--text-primary);
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,28 +11,107 @@
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    max-width: 1200px;
+    /* Removed outer top and bottom borders */
 }
 
 .feature-box {
-    padding: 3rem;
-    background: var(--bg-card);
-    border-radius: 1.5rem;
-    border: 1px solid rgba(132, 204, 22, 0.1);
+    padding: 3rem 2rem;
+    background: transparent;
+    border-right: 1px solid rgba(132, 204, 22, 0.3);
+    border-bottom: 1px solid rgba(132, 204, 22, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Remove right border for every 3rd item (last in row) */
+.feature-box:nth-child(3n) {
+    border-right: none;
+}
+
+/* Remove bottom border for the last row (items 4, 5, 6) */
+.feature-box:nth-last-child(-n+3) {
+    border-bottom: none;
+}
+
+.feature-box:hover {
+    background-color: rgba(132, 204, 22, 0.05);
+    /* Subtle highlight on hover */
 }
 
 .feature-box h3 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin: 0;
     color: var(--color-lime-green);
     font-family: var(--font-display);
+    line-height: 1.2;
 }
 
 .feature-box p {
     color: inherit;
     font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
     opacity: 0.8;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2x3 on tablet */
+    }
+
+    .feature-box:nth-child(3n) {
+        border-right: 1px solid rgba(132, 204, 22, 0.3);
+        /* Reset */
+    }
+
+    .feature-box:nth-child(2n) {
+        border-right: none;
+        /* New end of row */
+    }
+
+    /* Add right border for the third item (Collaborative Coding) in tablet view */
+    .feature-box:nth-child(3) {
+        border-right: 1px solid rgba(132, 204, 22, 0.3);
+    }
+
+    .feature-box:nth-last-child(-n+3) {
+        border-bottom: 1px solid rgba(132, 204, 22, 0.3);
+        /* Reset */
+    }
+
+    .feature-box:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+        border: none;
+    }
+
+    .feature-box:nth-child(1),
+    .feature-box:nth-child(5) {
+        border-right: none;
+    }
+
+    .feature-box:nth-last-child(-n+2) {
+        border-bottom: 1px solid rgba(132, 204, 22, 0.3);
+    }
+
+    .feature-box:nth-child(3) {
+        border-right: none;
+    }
+
+    .feature-box:last-child {
+        border-bottom: none;
+    }
 }

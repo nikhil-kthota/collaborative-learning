@@ -10,9 +10,11 @@ const LandingPage = ({ isDark, toggleTheme }) => {
         <div className="landing-wrapper">
             <Navbar isDark={isDark} toggleTheme={toggleTheme} />
             <Home />
-            <HowItWorks />
-            <Features />
-            <Footer />
+            <div className="relative-content" style={{ position: 'relative', zIndex: 10 }}>
+                <HowItWorks />
+                <Features />
+                <Footer />
+            </div>
         </div>
     );
 };
