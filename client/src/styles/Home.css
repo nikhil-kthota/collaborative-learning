@@ -12,8 +12,8 @@
     align-items: center;
     text-align: center;
     overflow: hidden;
-    background-color: #051008;
-    color: var(--color-light-green);
+    background-color: var(--color-black);
+    color: var(--color-pale-blue);
     padding: 0 2rem;
 }
 
@@ -32,7 +32,7 @@
     height: 600px;
     border-radius: 50%;
     /* Gradient with your palette */
-    background: radial-gradient(circle, rgba(132, 204, 22, 0.15) 0%, rgba(26, 77, 46, 0.05) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(129, 225, 255, 0.15) 0%, rgba(13, 43, 54, 0.05) 50%, transparent 70%);
     filter: blur(60px);
     z-index: 0;
     pointer-events: none;
@@ -76,7 +76,7 @@
     /* Desktop size */
     line-height: 1.2;
     letter-spacing: 0.1em;
-    color: var(--color-lime-green);
+    color: var(--color-neon-blue);
     text-transform: lowercase;
     font-variant: small-caps;
 }
@@ -88,14 +88,14 @@
 .headline-italic {
     font-style: italic;
     font-weight: 300;
-    color: var(--color-lime-green);
+    color: var(--color-neon-blue);
 }
 
 .sub-headline {
     font-family: var(--font-body);
     font-size: 1.1rem;
     max-width: 600px;
-    color: var(--color-gold);
+    color: var(--color-ocean-blue);
     margin-top: 1rem;
     line-height: 1.6;
 }
@@ -103,8 +103,8 @@
 .btn-journey {
     margin-top: 3rem;
     background: transparent;
-    color: var(--color-lime-green);
-    border: 1px solid rgba(132, 204, 22, 0.3);
+    color: var(--color-neon-blue);
+    border: 1px solid rgba(129, 225, 255, 0.3);
     padding: 1rem 2.5rem;
     border-radius: 9999px;
     font-family: var(--font-display);
@@ -118,10 +118,10 @@
 }
 
 .btn-journey:hover {
-    background: rgba(251, 191, 36, 0.05);
-    border-color: var(--color-gold);
-    color: var(--color-gold);
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.1);
+    background: rgba(0, 160, 208, 0.05);
+    border-color: var(--color-ocean-blue);
+    color: var(--color-ocean-blue);
+    box-shadow: 0 0 20px rgba(0, 160, 208, 0.1);
     letter-spacing: 0.3em;
 }
 

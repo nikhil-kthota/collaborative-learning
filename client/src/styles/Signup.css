@@ -4,7 +4,8 @@
     display: flex;
     min-height: 100vh;
     width: 100%;
-    background-color: var(--bg-primary);
+    background-color: var(--color-white);
+    /* Default background */
     overflow: hidden;
 }
 
@@ -17,9 +18,9 @@
     justify-content: center;
     max-width: 600px;
     z-index: 2;
-    background-color: #8ce655;
-    /* Approximate match from user image */
-    color: #000000;
+    background-color: var(--color-ocean-blue);
+    /* Bright blue for form */
+    color: var(--color-white);
 }
 
 .signup-header {
@@ -28,15 +29,23 @@
 
 .signup-title {
     font-size: 2.5rem;
-    color: #000000;
-    /* Black text */
+    color: var(--color-white);
+    /* White text default/light mode */
     margin-bottom: 0.5rem;
+}
+
+[data-theme='dark'] .signup-title {
+    color: var(--color-black);
 }
 
 .signup-subtitle {
     font-family: var(--font-body);
-    color: #000000;
+    color: var(--color-white);
     opacity: 0.8;
+}
+
+[data-theme='dark'] .signup-subtitle {
+    color: var(--color-black);
 }
 
 .signup-form {
@@ -54,8 +63,12 @@
 .form-label {
     font-family: var(--font-display);
     font-weight: 700;
-    color: #000000;
+    color: var(--color-white);
     font-size: 0.9rem;
+}
+
+[data-theme='dark'] .form-label {
+    color: var(--color-black);
 }
 
 /* Theme-aware Form Inputs */
@@ -71,16 +84,16 @@
 
 /* Light Mode Inputs: White background */
 [data-theme='light'] .form-input {
-    background-color: #ffffff;
-    color: #000000;
-    border-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Dark Mode Inputs: Black background */
 [data-theme='dark'] .form-input {
-    background-color: #000000;
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-color: rgba(0, 0, 0, 0.3);
 }
 
 .form-input::placeholder {
@@ -90,7 +103,7 @@
 
 .form-input:focus {
     outline: none;
-    border-color: var(--color-lime-green);
+    border-color: var(--color-neon-blue);
     /* Use the brand green for focus */
     box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
 }
@@ -98,7 +111,7 @@
 .btn-auth-submit {
     margin-top: 1rem;
     background-color: #000000;
-    color: #8ce655;
+    color: var(--color-neon-blue);
     /* Green text on black button for contrast */
     padding: 1rem;
     border-radius: 0.5rem;
@@ -191,7 +204,7 @@
     flex: 1;
     position: relative;
     overflow: hidden;
-    background-color: var(--color-forest-green);
+    background-color: var(--color-deep-blue);
     display: flex;
     align-items: flex-end;
     /* Align content to bottom */
@@ -206,13 +219,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-forest-green);
-    /* Overlay color */
+    /* Light Mode: Show raw image */
+    background-color: transparent;
+    background-blend-mode: normal;
+    opacity: 1;
+    filter: none;
+    transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .signup-image-bg {
+    /* Dark Mode: Add Blue Tint */
+    background-color: var(--color-deep-blue);
     background-blend-mode: multiply;
-    /* Blends the green with the image */
-    opacity: 0.9;
     filter: brightness(0.8) contrast(1.2);
-    /* Enhance contrast for art style */
 }
 
 .signup-overlay-text {
@@ -228,7 +247,7 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 20px;
-    border: 1px solid rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(0, 160, 208, 0.1);
     /* Subtle gold border */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     transform: translateY(0);
@@ -241,7 +260,7 @@
 
 .overlay-heading {
     font-size: 2.8rem;
-    color: var(--color-gold);
+    color: var(--color-ocean-blue);
     line-height: 1.1;
     margin-bottom: 0.5rem;
     font-family: var(--font-display);
@@ -250,16 +269,16 @@
 
 .overlay-sub {
     font-size: 1.3rem;
-    color: var(--color-light-green);
+    color: var(--color-pale-blue);
     line-height: 1.6;
     font-family: var(--font-body);
     font-weight: 500;
 }
 
 .overlay-sub span {
-    color: var(--color-lime-green);
+    color: var(--color-neon-blue);
     font-weight: 800;
-    text-shadow: 0 0 10px rgba(132, 204, 22, 0.3);
+    text-shadow: 0 0 10px rgba(129, 225, 255, 0.3);
 }
 
 /* Responsive */

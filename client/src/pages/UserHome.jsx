@@ -63,7 +63,7 @@ const UserHome = ({ isDark, toggleTheme }) => {
                     <div className="section-container">
                         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
                             <h2 className="section-title" style={{ marginBottom: 0 }}><Users /> My Groups</h2>
-                            <Link to="/all-groups" style={{ fontSize: '0.9rem', color: 'var(--color-lime-green)', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: '600' }}>
+                            <Link to="/all-groups" style={{ fontSize: '0.9rem', color: 'var(--color-neon-blue)', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: '600' }}>
                                 All Groups →
                             </Link>
                         </div>

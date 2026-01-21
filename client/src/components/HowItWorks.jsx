@@ -84,7 +84,7 @@ const HowItWorks = () => {
 
                 {/* Right Side: Scrollable List */}
                 <div className="hiw-right">
-                    <div style={{ paddingBottom: '1.5rem', marginBottom: '1.5rem', fontWeight: '700', fontFamily: 'var(--font-display)', fontSize: '3rem' }}>
+                    <div className="hiw-right-header">
                         This is how we work
                     </div>
                     {items.map((item) => (

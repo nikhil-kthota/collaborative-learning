@@ -12,7 +12,7 @@
     align-items: center;
     padding: 1rem 3rem;
     background-color: var(--bg-primary);
-    border-bottom: 1px solid rgba(132, 204, 22, 0.2);
+    border: 1px solid rgba(129, 225, 255, 0.2);
     position: sticky;
     top: 0;
     z-index: 50;
@@ -49,15 +49,15 @@
 }
 
 .nav-icon-btn:hover {
-    background-color: rgba(132, 204, 22, 0.1);
-    color: var(--color-lime-green);
+    background-color: rgba(129, 225, 255, 0.1);
+    color: var(--color-neon-blue);
 }
 
 .user-avatar-circle {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--color-lime-green);
+    background-color: var(--color-neon-blue);
     color: var(--color-black);
     display: flex;
     align-items: center;
@@ -106,7 +106,7 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    color: var(--color-lime-green);
+    color: var(--color-neon-blue);
 }
 
 .my-groups-container {
@@ -122,7 +122,7 @@
     justify-content: flex-end;
     align-items: center;
     background-color: var(--bg-card);
-    border: 1px solid rgba(132, 204, 22, 0.2);
+    border: 1px solid rgba(129, 225, 255, 0.2);
     padding: 2rem;
     border-radius: 1rem;
     min-height: 250px;
@@ -139,7 +139,7 @@
 }
 
 .group-card-square:hover {
-    border-color: var(--color-lime-green);
+    border-color: var(--color-neon-blue);
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -166,7 +166,7 @@
 }
 
 .join-action-card {
-    background-color: #8ce655;
+    background-color: var(--color-neon-blue);
     border: none;
     border-radius: 1.5rem;
     padding: 2.5rem;
@@ -174,7 +174,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 15px 40px rgba(132, 204, 22, 0.4);
+    box-shadow: 0 15px 40px rgba(129, 225, 255, 0.4);
     transform: scale(1.05);
     color: #000000;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -184,7 +184,7 @@
 
 .join-action-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(132, 204, 22, 0.4);
+    box-shadow: 0 15px 40px rgba(129, 225, 255, 0.4);
 }
 
 .join-action-card .form-label {
@@ -217,14 +217,14 @@
 }
 
 .join-action-card .btn-primary-block:hover {
-    background-color: var(--color-gold);
+    background-color: var(--color-ocean-blue);
     color: var(--color-black);
     transform: none;
 }
 
 .action-card {
     background-color: transparent;
-    border: 1px solid rgba(132, 204, 22, 0.3);
+    border: 1px solid rgba(129, 225, 255, 0.3);
     border-radius: 1rem;
     padding: 2rem;
     height: 100%;
@@ -249,7 +249,7 @@
     width: 100%;
     padding: 0.8rem;
     border-radius: 0.5rem;
-    border: 1px solid rgba(132, 204, 22, 0.3);
+    border: 1px solid rgba(129, 225, 255, 0.3);
     background-color: transparent;
     color: inherit;
     font-family: var(--font-body);
@@ -257,12 +257,12 @@
 
 .form-input:focus {
     outline: none;
-    border-color: var(--color-gold);
+    border-color: var(--color-ocean-blue);
 }
 
 .btn-primary-block {
     width: 100%;
-    background-color: var(--color-lime-green);
+    background-color: var(--color-neon-blue);
     color: var(--color-black);
     padding: 1rem;
     border: none;
@@ -276,7 +276,7 @@
 }
 
 .btn-primary-block:hover {
-    background-color: var(--color-gold);
+    background-color: var(--color-ocean-blue);
 }
 
 [data-theme='light'] .group-card-square {
@@ -289,7 +289,7 @@
 }
 
 [data-theme='dark'] .form-label {
-    color: #8ce655;
+    color: var(--color-neon-blue);
 }
 
 @media (max-width: 1024px) {
@@ -308,7 +308,7 @@
     .join-action-card,
     .join-action-card:hover {
         transform: none;
-        box-shadow: 0 10px 30px rgba(132, 204, 22, 0.2);
+        box-shadow: 0 10px 30px rgba(129, 225, 255, 0.2);
         /* Reduced shadow intensity */
     }
 }

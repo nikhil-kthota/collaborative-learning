@@ -1,8 +1,8 @@
 /* HowItWorks.css */
 
 .how-it-works-section {
-    background-color: #8ce655;
-    /* Lime Green as requested */
+    background-color: var(--color-ocean-blue);
+    /* Ocean Blue as requested */
     color: #000000;
     padding: 6rem 2rem;
     border-top-left-radius: 80px;
@@ -38,10 +38,29 @@
     font-family: var(--font-display);
     letter-spacing: -2px;
     margin-bottom: 2rem;
+    color: var(--color-white);
+}
+
+[data-theme='dark'] .how-it-works-section,
+[data-theme='dark'] .hiw-main-title,
+[data-theme='dark'] .hiw-step-header {
     color: #000000;
 }
 
 /* Right Side - Scrolling Steps */
+.hiw-right-header {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+}
+
+[data-theme='dark'] .hiw-right-header {
+    color: #000000;
+}
+
 .hiw-right {
     display: flex;
     flex-direction: column;
@@ -67,6 +86,7 @@
     font-weight: 600;
     margin-bottom: 1rem;
     font-family: var(--font-display);
+    color: var(--color-white);
 }
 
 .hiw-step-desc {
@@ -82,8 +102,11 @@
 
 .hiw-step-desc-inner {
     overflow: hidden;
+    color: var(--color-white);
+}
+
+[data-theme='dark'] .hiw-step-desc-inner {
     color: #333;
-    /* Slightly softer black for readability */
 }
 
 .hiw-step-item.active .hiw-step-desc {

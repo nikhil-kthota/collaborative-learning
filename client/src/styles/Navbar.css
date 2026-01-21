@@ -50,6 +50,15 @@
     background-color: var(--color-white);
 }
 
+.navbar.light .nav-link {
+    color: var(--color-deep-blue);
+}
+
+.navbar.light .btn-signup {
+    background-color: var(--color-deep-blue);
+    color: var(--color-white);
+}
+
 .navbar-container {
     width: 100%;
     max-width: 1200px;
@@ -69,6 +78,7 @@
     font-size: 1.5rem;
     z-index: 1002;
     cursor: pointer;
+    color: var(--color-neon-blue);
 }
 
 /* Desktop Actions - Container for Links + Buttons */
@@ -89,6 +99,7 @@
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 1rem;
+    color: var(--color-neon-blue);
 }
 
 .nav-link:hover {
@@ -135,7 +146,7 @@
 }
 
 .btn-signup {
-    background-color: var(--color-lime-green);
+    background-color: var(--color-neon-blue);
     color: var(--color-black);
     border: none;
     padding: 0.7rem 1.5rem;
@@ -148,7 +159,7 @@
 
 .btn-signup:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(132, 204, 22, 0.4);
+    box-shadow: 0 4px 12px rgba(129, 225, 255, 0.4);
 }
 
 /* Mobile Controls - Hidden on Desktop */

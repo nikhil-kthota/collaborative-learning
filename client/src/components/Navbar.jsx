@@ -35,8 +35,8 @@ const Navbar = ({ isDark, toggleTheme }) => {
             <div className="navbar-container">
                 {/* 1. Left: Brand */}
                 <div className="nav-brand">
-                    <Leaf size={28} fill={isDark ? "var(--color-gold)" : "var(--color-lime-green)"} strokeWidth={0} />
-                    <span style={{ color: isDark ? 'var(--color-gold)' : 'var(--color-black)' }}>CoLearn</span>
+                    <Leaf size={28} fill={isDark ? "var(--color-neon-blue)" : "var(--color-deep-blue)"} strokeWidth={0} />
+                    <span style={{ color: isDark ? 'var(--color-neon-blue)' : 'var(--color-deep-blue)' }}>CoLearn</span>
                 </div>
 
                 {/* 2. Center: Mobile Menu Toggle (Hamburger) - Visible only on mobile */}
@@ -58,7 +58,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
                     <div className="nav-links">
                         <button
                             className="nav-link"
-                            style={{ color: isDark ? 'var(--color-gold)' : 'var(--color-black)', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem', padding: '0.5rem 1rem' }}
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem', padding: '0.5rem 1rem' }}
                             onClick={() => {
                                 navigate('/');
                                 setTimeout(() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' }), 100);
@@ -68,7 +68,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
                         </button>
                         <button
                             className="nav-link"
-                            style={{ color: isDark ? 'var(--color-gold)' : 'var(--color-black)', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem', padding: '0.5rem 1rem' }}
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem', padding: '0.5rem 1rem' }}
                             onClick={() => {
                                 navigate('/');
                                 setTimeout(() => document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' }), 100);
@@ -78,7 +78,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
                         </button>
                         <button
                             className="nav-link"
-                            style={{ color: isDark ? 'var(--color-gold)' : 'var(--color-black)', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem', padding: '0.5rem 1rem' }}
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1rem', padding: '0.5rem 1rem' }}
                             onClick={() => {
                                 navigate('/');
                                 setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100);

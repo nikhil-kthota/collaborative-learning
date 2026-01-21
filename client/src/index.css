@@ -2,27 +2,27 @@
 
 :root {
   /* Core Basics */
-  --color-black: #202120;
+  --color-black: #001820;
   --color-white: #ffffff;
 
   /* Palette */
-  --color-forest-green: #1a4d2e;
-  /* Deep Forest Green */
-  --color-light-green: #dcfce7;
-  /* Very pale green/white-ish */
-  --color-lime-green: #8ce655;
-  /* Vibrant Lime */
-  --color-gold: #feed00;
+  --color-deep-blue: #0d2b36;
+  /* Deep Blue */
+  --color-pale-blue: #e0faff;
+  /* Very pale blue */
+  --color-neon-blue: #81E1FF;
+  /* Vibrant Neon Blue */
+  --color-ocean-blue: #00A0D0;
 
   --bg-primary: var(--color-white);
-  --bg-card: var(--color-light-green);
-  --bg-card-alt: var(--color-forest-green);
+  --bg-card: var(--color-pale-blue);
+  --bg-card-alt: var(--color-deep-blue);
 
   --text-primary: var(--color-black);
-  --text-on-dark: var(--color-gold);
+  --text-on-dark: var(--color-ocean-blue);
   --text-on-light: var(--color-black);
 
-  --btn-primary-bg: var(--color-lime-green);
+  --btn-primary-bg: var(--color-neon-blue);
   --btn-primary-text: var(--color-black);
 
 
@@ -34,9 +34,9 @@
 
 [data-theme='dark'] {
   --bg-primary: var(--color-black);
-  --bg-card: var(--color-forest-green);
+  --bg-card: var(--color-deep-blue);
 
-  --text-primary: var(--color-gold);
+  --text-primary: var(--color-ocean-blue);
 }
 
 * {
@@ -48,7 +48,7 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-lime-green) transparent;
+  scrollbar-color: var(--color-neon-blue) transparent;
 }
 
 /* Custom Scrollbar */
@@ -61,13 +61,13 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-lime-green);
+  background-color: var(--color-neon-blue);
   border-radius: 10px;
   border: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-forest-green);
+  background-color: var(--color-deep-blue);
 }
 
 body {
@@ -123,11 +123,11 @@ p {
   text-align: center;
   font-size: 3rem;
   font-family: var(--font-display);
-  color: var(--color-lime-green);
+  color: var(--color-neon-blue);
   margin-bottom: 4rem;
   transition: color 0.3s ease;
 }
 
 [data-theme='dark'] .section-title {
-  color: var(--color-gold) !important;
+  color: var(--color-ocean-blue) !important;
 }

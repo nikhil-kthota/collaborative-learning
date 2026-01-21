@@ -8,7 +8,7 @@
     background-color: var(--bg-primary);
     /* Automatically white in Light, black in Dark */
     color: var(--text-primary);
-    border-top: 1px solid rgba(132, 204, 22, 0.2);
+    border-top: 1px solid rgba(129, 225, 255, 0.2);
     font-family: var(--font-body);
     font-size: 0.9rem;
     position: relative;
@@ -16,7 +16,7 @@
 }
 
 [data-theme='dark'] .footer {
-    border-top-color: rgba(251, 191, 36, 0.2);
+    border-top-color: rgba(0, 160, 208, 0.2);
 }
 
 /* Sections */
@@ -47,14 +47,14 @@
 
 .footer-group {
     font-weight: 700;
-    color: var(--color-lime-green);
+    color: var(--color-neon-blue);
     font-family: var(--font-display);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 
 [data-theme='dark'] .footer-group {
-    color: var(--color-gold);
+    color: var(--color-ocean-blue);
 }
 
 .github-link {
@@ -68,11 +68,11 @@
 }
 
 .github-link:hover {
-    color: var(--color-lime-green);
+    color: var(--color-neon-blue);
 }
 
 [data-theme='dark'] .github-link:hover {
-    color: var(--color-gold);
+    color: var(--color-ocean-blue);
 }
 
 .scroll-top-btn {
@@ -91,15 +91,15 @@
 
 .scroll-top-btn:hover {
     transform: translateY(-5px);
-    background: rgba(132, 204, 22, 0.1);
-    color: var(--color-lime-green);
-    border-color: var(--color-lime-green);
+    background: rgba(129, 225, 255, 0.1);
+    color: var(--color-neon-blue);
+    border-color: var(--color-neon-blue);
 }
 
 [data-theme='dark'] .scroll-top-btn:hover {
-    background: rgba(251, 191, 36, 0.1);
-    color: var(--color-gold);
-    border-color: var(--color-gold);
+    background: rgba(0, 160, 208, 0.1);
+    color: var(--color-ocean-blue);
+    border-color: var(--color-ocean-blue);
 }
 
 /* Responsive */
