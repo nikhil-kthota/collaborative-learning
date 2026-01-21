@@ -2,7 +2,7 @@
 
 :root {
   /* Core Basics */
-  --color-black: #000000;
+  --color-black: #202120;
   --color-white: #ffffff;
 
   /* Palette */
@@ -10,12 +10,10 @@
   /* Deep Forest Green */
   --color-light-green: #dcfce7;
   /* Very pale green/white-ish */
-  --color-lime-green: #84cc16;
+  --color-lime-green: #8ce655;
   /* Vibrant Lime */
-  --color-gold: #fbbf24;
-  /* Warm Gold */
+  --color-gold: #feed00;
 
-  /* Defaults (Light Mode) */
   --bg-primary: var(--color-white);
   --bg-card: var(--color-light-green);
   --bg-card-alt: var(--color-forest-green);
@@ -27,10 +25,9 @@
   --btn-primary-bg: var(--color-lime-green);
   --btn-primary-text: var(--color-black);
 
-  /* Transitions */
+
   --transition-speed: 0.3s;
 
-  /* Typography */
   --font-display: 'Quicksand', sans-serif;
   --font-body: 'Comfortaa', sans-serif;
 }
@@ -50,6 +47,27 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-lime-green) transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-lime-green);
+  border-radius: 10px;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-forest-green);
 }
 
 body {

@@ -1,11 +1,6 @@
 import React from 'react';
 import '../styles/Home.css';
 
-/* 
-   Removed the JS mouse tracking logic.
-   The liquid effect is now handled entirely by CSS in the .centered-blob class (Home.css).
-*/
-
 const Home = () => {
     return (
         <div className="home-container" id="home">

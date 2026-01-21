@@ -1,9 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Mail, Leaf } from 'lucide-react';
 import '../styles/Signup.css';
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        // Add auth logic here later
+        navigate('/user-home');
+    };
+
     return (
         <div className="signup-container">
             <div className="signup-left">
@@ -20,7 +28,7 @@ const Login = () => {
                     <h1 className="signup-title">Welcome Back</h1>
                 </div>
 
-                <form className="signup-form" onSubmit={(e) => e.preventDefault()}>
+                <form className="signup-form" onSubmit={handleLogin}>
                     <div className="form-group">
                         <label className="form-label">Email Address</label>
                         <input type="email" className="form-input" placeholder="john@example.com" />

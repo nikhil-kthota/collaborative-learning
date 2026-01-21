@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // Using
 import LandingPage from './pages/LandingPage'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import UserHome from './pages/UserHome'
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<LandingPage isDark={isDark} toggleTheme={toggleTheme} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/user-home" element={<UserHome isDark={isDark} toggleTheme={toggleTheme} />} />
         </Routes>
       </div>
     </Router>
